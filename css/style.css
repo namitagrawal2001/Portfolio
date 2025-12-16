@@ -1,0 +1,269 @@
+/* ===== Global ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0f2a33;
+  color: #e0e0e0;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #081c24;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+header h2 {
+  color: #00f7ff;
+}
+
+header nav a {
+  color: #bdfcff;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: #00f7ff;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 100vh;
+  text-align: center;
+  padding-top: 140px;
+}
+
+.hero img {
+  width: 140px;
+  border-radius: 50%;
+  border: 3px solid #00f7ff;
+  margin-bottom: 15px;
+}
+
+.hero span {
+  color: #00f7ff;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 10px auto;
+}
+
+/* ===== Typing Text ===== */
+#typing-text {
+  color: #00f7ff;
+  font-size: 18px;
+  font-weight: 500;
+  border-right: 2px solid #00f7ff;
+  padding-right: 5px;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* ===== Button ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background: #00f7ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 15px #00f7ff;
+  transform: scale(1.05);
+}
+
+/* ===== Card Sections ===== */
+.card {
+  margin: 90px auto;
+  width: 70%;
+  background: #123845;
+  padding: 35px;
+  border-radius: 15px;
+}
+
+.card h2 {
+  text-align: center;
+  color: #00f7ff;
+  margin-bottom: 25px;
+}
+
+.card h3 {
+  color: #9befff;
+}
+
+.card p,
+.card li {
+  color: #d6f7ff;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.card ul li::before {
+  content: "✔ ";
+  color: #00f7ff;
+}
+
+/* ===== Projects ===== */
+.project {
+  margin-bottom: 30px;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+@keyframes projectBlink {
+  0% { box-shadow: 0 0 0 rgba(0,247,255,0); }
+  50% { box-shadow: 0 0 18px rgba(0,247,255,0.8); }
+  100% { box-shadow: 0 0 0 rgba(0,247,255,0); }
+}
+
+.project:hover {
+  animation: projectBlink 1.5s infinite;
+}
+
+.project h3 {
+  color: #00f7ff;
+}
+
+.project a {
+  color: #00f7ff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ===== Skills ===== */
+.skills-section {
+  margin: 90px auto;
+  width: 70%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 32px;
+  color: #00f7ff;
+  margin-bottom: 40px;
+}
+
+.skill-group {
+  margin-bottom: 30px;
+}
+
+.skill-group h3 {
+  color: #9befff;
+  margin-bottom: 15px;
+}
+
+.skill-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tags span {
+  padding: 10px 22px;
+  background: #00f7ff;
+  color: #000;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.skill-tags span:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00f7ff;
+}
+
+/* ===== Education ===== */
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.edu-card {
+  background: #0f3a46;
+  padding: 25px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.edu-card h3 {
+  color: #00f7ff;
+}
+
+.edu-card p {
+  color: #d6f7ff;
+}
+
+.edu-card span {
+  color: #9befff;
+  font-size: 13px;
+}
+
+.edu-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 18px rgba(0,247,255,0.6);
+}
+
+/* ===== Contact ===== */
+.contact-subtext {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #9befff;
+}
+
+#contact p {
+  text-align: center;
+}
+
+#contact a {
+  color: #00f7ff;
+  text-decoration: none;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .card,
+  .skills-section {
+    width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  header nav {
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding-top: 160px;
+  }
+}
