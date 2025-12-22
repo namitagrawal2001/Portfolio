@@ -1,4 +1,6 @@
-/* ===== Global ===== */
+/* =====================
+   Global
+===================== */
 * {
   margin: 0;
   padding: 0;
@@ -17,7 +19,9 @@ img {
   height: auto;
 }
 
-/* ===== Header ===== */
+/* =====================
+   Header
+===================== */
 header {
   position: fixed;
   top: 0;
@@ -27,8 +31,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 1000;
   flex-wrap: wrap;
+  z-index: 1000;
 }
 
 header h2 {
@@ -53,7 +57,9 @@ header nav a:hover {
   color: #00f7ff;
 }
 
-/* ===== Hero ===== */
+/* =====================
+   Hero
+===================== */
 .hero {
   min-height: 100vh;
   padding-top: 130px;
@@ -80,14 +86,32 @@ header nav a:hover {
   margin: 10px auto;
 }
 
+/* =====================
+   Typing Text + Blink (FINAL)
+===================== */
 #typing-text {
-  color: #00f7ff;
+  display: inline-block;
+  position: relative;
   font-size: 16px;
-  border-right: 2px solid #00f7ff;
-  padding-right: 5px;
+  color: #00f7ff;
+  min-height: 1em;
 }
 
-/* ===== Button ===== */
+#typing-text::after {
+  content: "|";
+  margin-left: 4px;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* =====================
+   Button
+===================== */
 .btn {
   display: inline-block;
   margin-top: 20px;
@@ -99,7 +123,9 @@ header nav a:hover {
   font-weight: 600;
 }
 
-/* ===== Card ===== */
+/* =====================
+   Card Sections
+===================== */
 .card {
   width: min(92%, 1100px);
   margin: 90px auto;
@@ -128,7 +154,9 @@ header nav a:hover {
   color: #00f7ff;
 }
 
-/* ===== Projects ===== */
+/* =====================
+   Projects
+===================== */
 .project {
   margin-bottom: 25px;
   padding: 20px;
@@ -146,7 +174,9 @@ header nav a:hover {
   font-weight: 600;
 }
 
-/* ===== Education ===== */
+/* =====================
+   Education
+===================== */
 .education-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -159,7 +189,9 @@ header nav a:hover {
   border-radius: 12px;
 }
 
-/* ===== Skills ===== */
+/* =====================
+   Skills
+===================== */
 .skills-pro {
   width: min(92%, 1100px);
   margin: 90px auto;
@@ -177,7 +209,9 @@ header nav a:hover {
   border-radius: 12px;
 }
 
-/* ===== Contact ===== */
+/* =====================
+   Contact
+===================== */
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -197,7 +231,9 @@ header nav a:hover {
   text-decoration: none;
 }
 
-/* ===== Mobile Fix ===== */
+/* =====================
+   Mobile
+===================== */
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 26px;
@@ -207,4 +243,8 @@ header nav a:hover {
     justify-content: center;
     text-align: center;
   }
+}
+header nav a.active {
+  color: #00f7ff;
+  border-bottom: 2px solid #00f7ff;
 }

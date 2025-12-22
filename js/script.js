@@ -10,16 +10,20 @@ function typeEffect() {
   const el = document.getElementById("typing-text");
   if (!el) return;
 
-  if (!isDeleting && index <= text.length) {
-    el.textContent = text.substring(0, index++);
-  } else if (isDeleting && index >= 0) {
-    el.textContent = text.substring(0, index--);
-  }
+  if (!isDeleting) {
+    el.textContent = text.slice(0, index + 1);
+    index++;
 
-  if (index === text.length) {
-    setTimeout(() => (isDeleting = true), pause);
-  } else if (index === 0) {
-    isDeleting = false;
+    if (index === text.length) {
+      setTimeout(() => (isDeleting = true), pause);
+    }
+  } else {
+    el.textContent = text.slice(0, index - 1);
+    index--;
+
+    if (index === 0) {
+      isDeleting = false;
+    }
   }
 
   setTimeout(typeEffect, speed);
