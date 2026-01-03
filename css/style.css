@@ -248,3 +248,43 @@ header nav a.active {
   color: #00f7ff;
   border-bottom: 2px solid #00f7ff;
 }
+.skills-pro {
+  max-width: 1100px;
+  margin: 0 auto 60px auto;
+  padding: 30px;
+  background: #073642;
+  border-radius: 16px;
+}
+
+.skills-pro .section-title {
+  text-align: center;
+  color: #2ce8e8;
+  margin-bottom: 30px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skill-box {
+  background: #0b4b5a;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.skill-box h3 {
+  color: #7fffd4;
+  margin-bottom: 12px;
+}
+
+.skill-box ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.skill-box li {
+  margin-bottom: 6px;
+  color: #e0f7fa;
+}
