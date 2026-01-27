@@ -13,12 +13,18 @@ permissions:
 jobs:
   deploy:
     environment:
-      name: github-pages   
+      name: github-pages
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Test HTML files
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y tidy
+          tidy -e index.html
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
